@@ -20,8 +20,8 @@ app.get('/', function (req, res) {
     var Server = require('./lib/Server');
     var fuseki = new Server();
 
-    var query = 'PREFIX d: <http://learningsparql.com/ns/data#>SELECT ?type ?value WHERE { d:x ?type ?value } LIMIT 25';
-    var dataset = 'dbpedia';
+    var query = '  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>   SELECT * WHERE {     ?sub ?pred ?obj .   }  ';
+    var dataset = 'TaxiEsaadSpatial';
     fuseki.connect(function(err, con) {
         if (err) {
             res.status(err.code || 500).jsonp(err);
