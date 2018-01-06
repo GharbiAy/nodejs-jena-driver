@@ -21,6 +21,8 @@
     "grunt-serve": "^0.1.6"
   },
   "dependencies": {
+    "ejs": "^1.0.0",
+    "express-validator": "^2.21.0",
     "http": "0.0.0",
     "https": "^1.0.0",
     "querystring": "^0.2.0",
