@@ -10,6 +10,7 @@ var app = express();
 var Server = require('./lib/Server');
 var fuseki = new Server();
 var dataset = 'TaxiEsaadSpatial';
+var dattest;
 
 /*Set EJS template Engine*/
 app.set('views','./views');
@@ -54,6 +55,7 @@ curut.get(function(req,res,next){
                     //res.end();
                     //var data= data1.results.bindings;
                     //console.log()
+                    dattest=data;
                     res.render('user',{title:"RESTful Crud Example",data});
                 }
             });
@@ -83,6 +85,9 @@ curut.post(function(req,res,next){
         } else {
             con.update(dataset, insertquery, function(err, data) {
                   console.log(insertquery);
+                  console.log("********************** dattest length: "+dattest.length+" ****************************");
+                  console.log(dattest)
+                  console.log("********************** dattest ****************************");
                   res.sendStatus(200);
             });
             
