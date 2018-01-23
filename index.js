@@ -50,13 +50,13 @@ curut.get(function(req,res,next){
                 if (err) {
                     res.status(err.code || 500).jsonp(err);
                 } else {
-                    var data= data1.results.bindings;
-                    //res.jsonp(data);
-                    //res.end();
                     //var data= data1.results.bindings;
+                    //res.jsonp(data1);
+                    //res.end();
+                    var data= data1.results.bindings;
                     //console.log()
-                    dattest=data;
-                    res.render('user',{title:"RESTful Crud Example",data});
+                   dattest=data;
+                res.render('user',{title:"RESTful Crud Example",data});
                 }
             });
         }
@@ -85,9 +85,9 @@ curut.post(function(req,res,next){
         } else {
             con.update(dataset, insertquery, function(err, data) {
                   console.log(insertquery);
-                  console.log("********************** dattest length: "+dattest.length+" ****************************");
-                  console.log(dattest)
-                  console.log("********************** dattest ****************************");
+                //   console.log("********************** dattest length: "+dattest.length+" ****************************");
+                //   console.log(dattest)
+                //   console.log("********************** dattest ****************************");
                   res.sendStatus(200);
             });
             
